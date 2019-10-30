@@ -1,1 +1,1 @@
-Write-Host "Hello, it's working."
+Write-Host "Hello, it's working. Life is pain."
