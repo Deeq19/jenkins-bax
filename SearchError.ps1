@@ -9,32 +9,32 @@
  function SearchError{
 
     Param (
-        [Parameter (Mandatory=$true)] [STRING] $SourcePath,
+        #[Parameter (Mandatory=$true)] [STRING] $SourcePath,
         #[Parameter (Mandatory=$true)] [STRING] $SourceFile,
-        [Parameter (Mandatory=$true)] [STRING] $ErrorCode,
+        #[Parameter (Mandatory=$true)] [STRING] $ErrorCode,
         #[Parameter (Mandatory=$true)] [STRING] $FileType
         #[Parameter (Mandatory=$true)] [STRING] $DestPath
         
         #for testing purposes. Where you want to see the output file.Important to add .\NAMEOFTXTFILE.txt
-        [Parameter (Mandatory=$true)] [STRING] $OutputSummary #example path: C:\Users\jessica.gutierrez\Desktop\FunctionOutputs\CopyFile_OutputSummary.txt
+        #[Parameter (Mandatory=$true)] [STRING] $OutputSummary #example path: C:\Users\jessica.gutierrez\Desktop\FunctionOutputs\CopyFile_OutputSummary.txt
       
 
         )
     
-    $TargetPath = "$($SourcePath)"
+    #$TargetPath = "$($SourcePath)"
     #$TargetPath = "$($SourcePath)\$($SourceFile)"
     #Return $TargetPath
 
-    $DestinationPath = "$($DestPath)"
+    #$DestinationPath = "$($DestPath)"
     #Return $DestinationPath 
    
 
     #foreach($error in $TargetPath) {
 
-    $Files = Get-ChildItem $TargetPath | Select-String -pattern $ErrorCode | group path | select name
+    $Files = Get-ChildItem ${env:TargetPath} | Select-String -pattern ${env:ErrorCode} | group path | select name
     #Get-ChildItem $TargetPath | Select-String -pattern $ErrorCode #return text with error code 
-    Write-Output ( "Files in " + $TargetPath + " were search for error code: " + $ErrorCode + $Files)| Out-File $OutputSummary
-    Write-Output ("Open " + $OutputSummary + " to see script output" )
+    Write-Output ( "Files in " + ${env:TargetPath} + " were search for error code: " + ${env:ErrorCode} + $Files)| Out-File ${env:OutputSummary}
+    Write-Output ("Open " + ${env.OutputSummary} + " to see script output" )
     $Files
 
 
