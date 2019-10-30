@@ -30,7 +30,7 @@
     #$DestinationPath = "$($DestPath)"
     #Return $DestinationPath 
     
-    Copy-Item ${env:TargetPath} -Destination ${env:DestinationPath}
+    Copy-Item ${env:OriginPath} -Destination ${env:DestinationPath}
     Write-Output "File" ${env:OriginPath} "has been copied to" ${env:DestinationPath}
 
 
