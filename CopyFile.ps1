@@ -6,7 +6,7 @@
 
  function CopyFile{
 
-    Param (
+    #Param (
         #[Parameter (Mandatory=$true)] [STRING] $Region,
         #[Parameter (Mandatory=$true)] [STRING] $Env,
         #[STRING] $Env,
