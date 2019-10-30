@@ -17,22 +17,22 @@
         #[STRING] $TargetPath
 
 
-        [Parameter (Mandatory=$true)] [STRING] $TargetPath,
+        #[Parameter (Mandatory=$true)] [STRING] $TargetPath,
         #[STRING] $TargetFile
-        [Parameter (Mandatory=$true)] [STRING] $TargetFile,
-        [Parameter (Mandatory=$true)] [STRING] $DestPath
+        #[Parameter (Mandatory=$true)] [STRING] $TargetFile,
+        #[Parameter (Mandatory=$true)] [STRING] $DestPath
         #[Parameter (Mandatory=$true)] [STRING] $DestFile
-        )
+        #)
 
-    $TargetPath = "$($TargetPath)\$($TargetFile)"
+    #$TargetPath = "$($TargetPath)\$($TargetFile)"
     #Return $TargetPath
 
-    $DestinationPath = "$($DestPath)"
+    #$DestinationPath = "$($DestPath)"
     #Return $DestinationPath 
     
-    Copy-Item $TargetPath -Destination $DestinationPath
-    Write-Output "File" $TargetFile "has been copied to" $DestPath
+    Copy-Item ${env:TargetPath} -Destination $DestinationPath
+    Write-Output "File" ${env:OriginPath} "has been copied to" ${env:DestinationPath}
 
 
 }
-CopyFile
+#CopyFile
