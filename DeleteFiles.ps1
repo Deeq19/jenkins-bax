@@ -22,9 +22,10 @@
 # -----------------
 
    # Deletes all files in source path (folder level)  
-   
+   $filesDeleted = Get-ChildItem -Path ${env:SourcePath}
    Remove-Item ${env:SourcePath}\*.*
    Write-Output ("All files from "+ ${env:SourcePath} + " have been deleted.") #| Out-File ${env:OutputSummary}
+   Write-Output ("The files deleted were " + $filesDeleted
    
 # ------------------
 
