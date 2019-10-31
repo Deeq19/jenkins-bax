@@ -13,7 +13,7 @@
         #[Parameter (Mandatory=$true)] [STRING] $OutputSummary #example path: C:\Users\jessica.gutierrez\Desktop\FunctionOutputs\Delete_ExecutionSummary.txt
         #)
     
-    $TargetPath = "${env:SourcePath}"
+    #$TargetPath = "${env:SourcePath}"
     #Return $TargetPath
 
     #$DestinationPath = "$($DestPath)"
@@ -24,7 +24,7 @@
    # Deletes all files in source path (folder level)  
    
    Remove-Item ${env:SourcePath}\*.*
-   Write-Output ("All files from "+ $TargetPath + " have been deleted.") #| Out-File ${env:OutputSummary}
+   Write-Output ("All files from "+ ${env:SourcePath} + " have been deleted.") #| Out-File ${env:OutputSummary}
    
 # ------------------
 
