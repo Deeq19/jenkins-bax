@@ -23,8 +23,8 @@
 
    # Deletes all files in source path (folder level)  
    
-   Remove-Item $SourcePath\*.*
-   Write-Output ("All files from "+ $SourcePath + " have been deleted.") | Out-File $OutputSummary
+   Remove-Item ${env:SourcePath}\*.*
+   Write-Output ("All files from "+ ${env:SourcePath} + " have been deleted.") | Out-File ${env:OutputSummary}
    
 # ------------------
 
