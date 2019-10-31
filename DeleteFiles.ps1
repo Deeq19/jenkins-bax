@@ -23,8 +23,8 @@
 
    # Deletes all files in source path (folder level)  
    
-   #Remove-Item $SourcePath\*.*
-   #Write-Output ("All files from "+ $SourcePath + " have been deleted.") | Out-File $OutputSummary
+   Remove-Item $SourcePath\*.*
+   Write-Output ("All files from "+ $SourcePath + " have been deleted.") | Out-File $OutputSummary
    
 # ------------------
 
@@ -56,8 +56,8 @@
    #Delete files based on time 
    #Notes, - Recurse takes all objects in path (files/folders/subfolders) 
 
-   Get-ChildItem ${env:SourcePath} -Recurse | Where-Object {($_.LastWriteTime -lt (Get-Date).AddDays(-5))} | Remove-Item -WhatIf        
-   Write-Output ("Files have been deleted based on LastWritenTime")| Out-File ${env:OutputSummary}
+   #Get-ChildItem ${env:SourcePath} -Recurse | Where-Object {($_.LastWriteTime -lt (Get-Date).AddDays(-5))} | Remove-Item -WhatIf        
+   #Write-Output ("Files have been deleted based on LastWritenTime")| Out-File ${env:OutputSummary}
 
 } 
 DeleteFiles
