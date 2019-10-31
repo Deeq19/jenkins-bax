@@ -22,11 +22,11 @@
  function StartServer{
 
     Param (
-        [Parameter (Mandatory=$true)] [STRING] $Region,
-        [Parameter (Mandatory=$true)] [STRING] $Env,
+        #[Parameter (Mandatory=$true)] [STRING] $Region,
+        #[Parameter (Mandatory=$true)] [STRING] $Env,
         #[STRING] $Env,
-        [Parameter (Mandatory=$true)] [STRING] $ScriptName, #$ScriptName 
-        [Parameter (Mandatory=$true)] [STRING] $Server_Name
+        #[Parameter (Mandatory=$true)] [STRING] $ScriptName, #$ScriptName 
+        #[Parameter (Mandatory=$true)] [STRING] $Server_Name
         #[STRING] $Server,
         #[STRING] $Services
     )
@@ -34,14 +34,14 @@
 
     #$startDate = Get-Date;
 
-    $Sourcefile = "C:\Users\jessica.gutierrez\OneDrive - Slalom\Baxter\Powershell Scripts\ControlFile\Cognos_ControlFile_CLEAN10182019.csv"
+    $Sourcefile = "/Cognos_ControlFile_10182019.csv"
     $StartProperties  = (Import-Csv $Sourcefile) 
 
     $Sorted = $StartProperties |select Server_Name,Service_Name, Start_Order, Start_Flag, Start_Wait  | Sort-Object -Property Server_Name, {[int]$_.Start_Order}|Format-Table
     #$Sorted
 
     foreach($line in $StartProperties){
-        if ([string]$line.'Server_Name' -eq $Server_Name){ 
+        #if ([string]$line.'Server_Name' -eq $Server_Name){ 
         $Server_Name = [string]$line.'Server_Name'
         $Service_Name = [string]$line.'Service_Name'
         $Start_Order = [string]$line.'Start_Order'
