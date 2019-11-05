@@ -1,9 +1,9 @@
 ﻿function Start_Stop{
-    Param(
+    #Param(
 
         #[Parameter (Mandatory=$true)] [String] $JenkinsStart_Stop = $env:Start_Stop
-        [Parameter (Mandatory=$true)] [String]$JenkinsServer = ${env:CognosServer}
-        )
+        #[Parameter (Mandatory=$true)] [String]$JenkinsServer = ${env:CognosServer}
+        #)
 
 
     $Sourcefile = "./Cognos_ControlFile_10182019.csv"
@@ -12,7 +12,7 @@
 
 
     foreach($line in $StartProperties){
-        if ([string]$line.'Server_Name' -eq $JenkinsServer){ 
+        if ([string]$line.'Server_Name' -eq ${env:CognosServer}){ 
         $Server_Name = [string]$line.'Server_Name'
         $Service_Name = [string]$line.'Service_Name'
         $Start_Order = [string]$line.'Start_Order'
