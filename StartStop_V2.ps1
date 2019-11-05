@@ -12,7 +12,7 @@
 
 
     foreach($line in $StartProperties){
-        if ([string]$line.'Server_Name' -eq ${env:CognosServer}){ 
+        if ([string]$line.'Server_Name' -in ${env:ServerGroup}){ 
         $Server_Name = [string]$line.'Server_Name'
         $Service_Name = [string]$line.'Service_Name'
         $Start_Order = [string]$line.'Start_Order'
