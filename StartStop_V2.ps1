@@ -6,7 +6,7 @@
         )
 
 
-    $Sourcefile = "./Cognos_ControlFile_CLEAN10182019.csv"
+    $Sourcefile = "./Cognos_ControlFile_10182019.csv"
 
     $StartProperties = Import-Csv $Sourcefile |Select Server_Name, Service_Name, Start_Order, Start_Flag, Start_Wait  | Sort-Object -Property Server_Name, {[int]$_.Start_Order} 
 
