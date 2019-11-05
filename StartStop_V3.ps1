@@ -2,7 +2,7 @@
     Param(
 
         [Parameter (Mandatory=$true)] [String]$Server,
-        [String]$Services
+        [String[]]$Services
 
         )
         
