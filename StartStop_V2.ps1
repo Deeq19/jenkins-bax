@@ -2,7 +2,7 @@
     Param(
 
         #[Parameter (Mandatory=$true)] [String] $JenkinsStart_Stop = $env:Start_Stop
-        [Parameter (Mandatory=$true)] [String]$JenkinsServer = $env:Server
+        [Parameter (Mandatory=$true)] [String]$JenkinsServer = ${env:CognosServer}
         )
 
 
