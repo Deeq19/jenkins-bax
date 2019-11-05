@@ -3,7 +3,7 @@
 
         [Parameter (Mandatory=$true)] [String] $Start_Stop,
         [Parameter (Mandatory=$true)] [String]$Server,
-        [String[]]$Services
+        [String]$Services
 
         )
     Write-Output $Start_Stop
