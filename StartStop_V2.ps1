@@ -12,7 +12,7 @@
 
 
     foreach($line in $StartProperties){
-        if ([string]$line.'Server_Name' -in ${env:ServerGroup}){ 
+        if ([string]$line.'Server_Name' -in ${env:server}){ 
         $Server_Name = [string]$line.'Server_Name'
         $Service_Name = [string]$line.'Service_Name'
         $Start_Order = [string]$line.'Start_Order'
