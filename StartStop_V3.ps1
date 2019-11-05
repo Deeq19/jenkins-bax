@@ -1,4 +1,4 @@
-function Start_Stop{
+
     Param(
 
         [Parameter (Mandatory=$true)] [String]$Server,
@@ -10,5 +10,3 @@ function Start_Stop{
     Write-Output $Services
 
   
-}
-Start_Stop 
