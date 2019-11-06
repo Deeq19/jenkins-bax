@@ -1,4 +1,4 @@
-﻿function DumpCleanup{
+function DumpCleanup{
 
  #------------- Param Logic: TBD (11.1.19)
 
@@ -14,7 +14,8 @@
  #------------- DumpFile funtion logic: Done (11.1.19)
     $Sourcefile = "./Cognos_ControlFile.csv"
   
-    $StartProperties = Import-Csv $SourceFile | Where-Object { ($_.Server_Name -eq $server) -and ($_.Service_Code -match $services)} | Select Server_Name, Service_Name, Install_Location 
+    $StartProperties = Import-Csv $SourceFile | Where-Object { ($_.Server_Name -eq $server) -and ($_.Service_Code -match $services)} `
+                                            | Select Server_Name, Service_Name, Install_Location 
 
     $StartProperties 
 
