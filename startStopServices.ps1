@@ -11,7 +11,7 @@ function startStopServices{
     [String] $waitTime = ($startStop + "_Wait")
     # Write-Output ($services -Join ",")
         
-    $Sourcefile = "C:\Users\deeq\Downloads\Cognos_ControlFile.csv"
+    $Sourcefile = "./Cognos_ControlFile.csv"
     $StartProperties = Import-Csv $Sourcefile | Where-Object { ($_.Server_Name -eq $server) -and ($_.Service_Code -match ($services -Join "|"))} `
                                                | Select Server_Name, Service_Code, Service_Name, Start_Order, Stop_Order, Start_Flag, Start_Wait, Stop_Wait `
                                                | Sort-Object -Property {[int]$_.$sortOrder}
