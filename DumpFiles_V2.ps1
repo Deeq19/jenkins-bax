@@ -13,6 +13,7 @@
 
  #------------- DumpFile funtion logic: Done (11.1.19)
     $Sourcefile = "./Cognos_ControlFile.csv"
+    Write-Output $Services
     Write-Output "checkpoint 1"
   
     $StartProperties = Import-Csv $SourceFile | Where-Object { ($_.Service_Code -match $services)} `
