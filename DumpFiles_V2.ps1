@@ -7,13 +7,13 @@
         #[Parameter (Mandatory=$true)] [STRING] $Env,
         #[STRING] $Env,
         #[Parameter (Mandatory=$true)] [STRING] $server,
-        [Parameter (Mandatory=$true)] [STRING[]] $Services
+        [Parameter (Mandatory=$true)] [STRING] $Services
         
     )
 
  #------------- DumpFile funtion logic: Done (11.1.19)
     $Sourcefile = "./Cognos_ControlFile.csv"
-    $StartProperties = Import-Csv $Sourcefile | Where-Object { ($_.Service_Code -match ($services -Join "|"))} `
+    $StartProperties = Import-Csv $Sourcefile | Where-Object { ($_.Service_Code -match ($services))} `
                                                | Select Server_Name, Install_Location, Service_Code, Service_Name, Start_Order, Stop_Order, Start_Flag, Start_Wait, Stop_Wait `
                                                | Sort-Object -Property {[int]$_.$sortOrder}
  
