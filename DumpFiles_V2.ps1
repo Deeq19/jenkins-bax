@@ -14,7 +14,7 @@
  #------------- DumpFile funtion logic: Done (11.1.19)
     $Sourcefile = "./Cognos_ControlFile.csv"
   
-    $StartProperties = Import-Csv $SourceFile | Where-Object { ($_.Service_Code -match $services)} `
+    $StartProperties = Import-Csv $SourceFile | Where-Object { ($_.Service_Code -match "DISP")} `
                                                 | Select Server_Name, Service_Name, Install_Location 
 
     $StartProperties 
