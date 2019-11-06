@@ -19,7 +19,9 @@
                                                 | Select Server_Name, Service_Name, Install_Location 
 
     Write-Output "checkpoint 2"
-    $StartProperties 
+    Write-Output $StartProperties
+    Write-Output "checkpoint 3"
+     
 <#
     foreach($line in $StartProperties){
         #if ([string]$line.'Server_Name' -eq $Server_Name){ 
